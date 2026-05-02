@@ -22,7 +22,7 @@ set(LIBS
   clangCodeGen
   clangBasic
   clangEdit
-
+  clangInterpreter
   clingUtils
 )
 
@@ -44,6 +44,9 @@ set( LLVM_LINK_COMPONENTS
   target
   transformutils
   binaryformat
+  orctargetprocess
+  passes
+  targetparser
   ${LLVM_TARGETS_TO_BUILD}
 )
 

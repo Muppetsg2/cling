@@ -1,8 +1,10 @@
 cmake_minimum_required(VERSION 3.10)
 
+option(FORCE_CLING_TOP_LEVEL "Forces Cling to see itself as it is a top-level-project" OFF)
+
 # If we are not building as a part of LLVM, build Cling as an
 # standalone project, using LLVM as an external library:
-if( CMAKE_SOURCE_DIR STREQUAL CMAKE_CURRENT_SOURCE_DIR )
+if((CMAKE_SOURCE_DIR STREQUAL CMAKE_CURRENT_SOURCE_DIR) OR FORCE_CLING_TOP_LEVEL)
   project(Cling)
 
   # See <https://llvm.org/docs/CMake.html#embedding-llvm-in-your-project>.
